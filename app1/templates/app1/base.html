@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}my website{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'app1/css/style.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <h1>my website</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+    <button type="button" onclick="checkfunction()">Check</button>
+
+<script src="{% static 'app1/jss/script.js' %}"></script>
+
+    <footer>
+        <p>&copy; 2026 my website, all rights reserved</p>
+    </footer>
+
+</body>
+</html>
